@@ -13,7 +13,8 @@ thread_lock = Lock()
 
 @app.route('/')
 def index():
-    return render_template('test.html')
+    # return render_template('test_new.html')#chatbot_original.html
+    return render_template('test.html')#
 
 @socketio.on('connect', namespace='/test_conn')
 def try_connect():
@@ -24,7 +25,7 @@ def try_connect():
 
 def background_thread():
     while True:
-        socketio.sleep(5)
+        socketio.sleep(1)
         t = random.randint(1, 100)
         socketio.emit('server_response',
                       {'data': t},namespace='/test_conn')
