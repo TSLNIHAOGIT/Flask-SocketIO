@@ -13,7 +13,7 @@ socketio = SocketIO(app)
 from flask import Flask
 app=Flask(__name__)
 from flask import  render_template,request
-from mong_database import MongoManager#这样子也可以
+# from mong_database import MongoManager#这样子也可以
 # from app.mong_database import MongoManager
 
 
@@ -22,7 +22,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 import atexit
 import time
 import re
-mongo_db=MongoManager()
+# mongo_db=MongoManager()
 
 import urllib.request
 from urllib.parse import quote

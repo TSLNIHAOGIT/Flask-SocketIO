@@ -22,7 +22,7 @@ alert('欢迎来到flask-socketio');
     $(document).ready(function() {
         namespace = '/test_conn';
         var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
-        socket.on('server_response', function(res) {
+        socket.on('server_response1', function(res) {
             var t = res.data;
             $("#t").text(t);
             $("#t1").text(t);

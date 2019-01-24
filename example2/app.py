@@ -4,8 +4,8 @@ monkey.patch_all()
 # monkey.patch_all()的导入要放在所有的前面
 import requests
 
-from requests.packages.urllib3.util.ssl_ import create_urllib3_context
-create_urllib3_context()
+
+
 from flask import Flask
 from flask_socketio import SocketIO,send
 

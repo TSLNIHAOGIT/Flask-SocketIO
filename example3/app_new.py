@@ -16,7 +16,7 @@ def index():
     # return render_template('test_new.html')#chatbot_original.html
     return render_template('test.html')#
 
-@socketio.on('connect', namespace='/test_conn')
+@socketio.on('connect', namespace='/test_conn')#connect是固定的
 def try_connect():
     global thread
     with thread_lock:
@@ -27,7 +27,9 @@ def background_thread():
     while True:
         socketio.sleep(1)
         t = random.randint(1, 100)
-        socketio.emit('server_response',
+
+        #emit中的键与js代码socket.on中的键相对应
+        socketio.emit('server_response1',#与js代码相对应，socket.on('server_response1', function(res) {
                       {'data': t},namespace='/test_conn')
 
 if __name__ == '__main__':
