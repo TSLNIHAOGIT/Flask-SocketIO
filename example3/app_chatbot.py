@@ -52,13 +52,19 @@ def try_connect():
 #后端监听前端，前端监听后端
 @socketio.on('client_send',namespace=name_space)
 def client_msg(msg):
-
+    print('msg',msg)#msg {'data': '%u4F60%u597D'}
     sentence = msg.get('data')
     sentence=decode(sentence)
 
 
-    #发送emit('server_response'，让后端监听
-    socketio.emit('server_response', {'data': sentence}, namespace=name_space)
+
+    if sentence=='断开':
+        socketio.emit('server_response', {'status': 'disconnected'}, namespace=name_space)
+    else:
+        # 发送emit('server_response'，让后端监听
+        socketio.emit('server_response', {'data': sentence}, namespace=name_space)
+
+
 
 
 
