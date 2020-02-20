@@ -4,6 +4,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO,emit
 from threading import Lock
 import re
+import time
 
 import pandas as pd
 import numpy as np
@@ -36,7 +37,7 @@ def try_connect():
     ##while导致链接不上，发不出去消息
     # while True:
     #     socketio.sleep(5)
-
+        start=time.time()
         # t = random_int_list(1, 100, 10)
         t='欢迎来到flask_socketio'
 
@@ -52,9 +53,10 @@ def try_connect():
 #后端监听前端，前端监听后端
 @socketio.on('client_send',namespace=name_space)
 def client_msg(msg):
-    print('msg',msg)#msg {'data': '%u4F60%u597D'}
+    print('msg client msg',msg)#msg {'data': '%u4F60%u597D'}
     sentence = msg.get('data')
     sentence=decode(sentence)
+    print('msg client sentence', sentence)  # msg {'data': '%u4F60%u597D'}
 
 
 
@@ -71,3 +73,6 @@ def client_msg(msg):
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
+    '''
+    测试方法：在浏览器中输入地址：localhost:5000会弹出chatbot对话窗口，在里面进行对话即可
+    '''
