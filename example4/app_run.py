@@ -50,7 +50,7 @@ def get_data(sentence):
     response.close()
     return eval(the_page)['reply']
 
-'''/Users/ozintel/Downloads/Tsl_python_progect/local_ml/Flask-SocketIO/example4/app_run.py'''
+'''/Users/ozintel/Downloads/Tsl_python_progect/local_ml/Flask-SocketIO-self/example4/app_run.py'''
 #http://localhost:5000/
 @app.route('/')#网页url的当前路径
 

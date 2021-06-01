@@ -9,6 +9,13 @@
 1.在浏览器中输入地址localhost:5000
 2.定时显示数字
 
+(3)app_new_apschedule.py在app_new正常运行基础上修改
+可正常运行，使用了原始的apschedule来执行定时任务
+(4)app_new_flask_apschedule.py在app_new正常运行基础上修改
+可正常运行，使用了原始的apschedule结合flask-apschedule来执行定时任务
+
+
+
 ##example4不能运行，应该是在3基础上想进行改进的，但是还没有调试以及改进
 
 Flask-SocketIO

@@ -24,7 +24,7 @@ import click
               'the original Flask local development server and are ignored.')
 @pass_script_info
 def run(info, host, port, reload, debugger, eager_loading, with_threads):
-    """Runs a local development server for the Flask-SocketIO application.
+    """Runs a local development server for the Flask-SocketIO-self application.
 
     The reloader and debugger are by default enabled if the debug flag of
     Flask is enabled and disabled otherwise.
@@ -45,7 +45,7 @@ def run(info, host, port, reload, debugger, eager_loading, with_threads):
         # import path because the app was loaded through a callback then
         # we won't print anything.
         if info.app_import_path is not None:
-            print(' * Serving Flask-SocketIO app "%s"' % info.app_import_path)
+            print(' * Serving Flask-SocketIO-self app "%s"' % info.app_import_path)
         if debug is not None:
             print(' * Forcing debug mode %s' % (debug and 'on' or 'off'))
     else:

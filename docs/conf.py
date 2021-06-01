@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Flask-SocketIO documentation build configuration file, created by
+# Flask-SocketIO-self documentation build configuration file, created by
 # sphinx-quickstart on Sun Feb  9 12:36:23 2014.
 #
 # This file is execfile()d with the current directory set to its
@@ -44,7 +44,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Flask-SocketIO'
+project = u'Flask-SocketIO-self'
 copyright = u'2014, Miguel Grinberg'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -106,7 +106,7 @@ html_theme = 'flask_small'
 # documentation.
 html_theme_options = {
     'index_logo': 'logo.png',
-    'github_fork': 'miguelgrinberg/Flask-SocketIO'
+    'github_fork': 'miguelgrinberg/Flask-SocketIO-self'
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -200,7 +200,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'Flask-SocketIO.tex', u'Flask-SocketIO Documentation',
+  ('index', 'Flask-SocketIO-self.tex', u'Flask-SocketIO-self Documentation',
    u'Miguel Grinberg', 'manual'),
 ]
 
@@ -230,7 +230,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'flask-socketio', u'Flask-SocketIO Documentation',
+    ('index', 'flask-socketio', u'Flask-SocketIO-self Documentation',
      [u'Miguel Grinberg'], 1)
 ]
 
@@ -244,8 +244,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Flask-SocketIO', u'Flask-SocketIO Documentation',
-   u'Miguel Grinberg', 'Flask-SocketIO', 'One line description of project.',
+  ('index', 'Flask-SocketIO-self', u'Flask-SocketIO-self Documentation',
+   u'Miguel Grinberg', 'Flask-SocketIO-self', 'One line description of project.',
    'Miscellaneous'),
 ]
 

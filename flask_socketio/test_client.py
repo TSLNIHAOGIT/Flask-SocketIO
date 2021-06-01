@@ -7,7 +7,7 @@ from werkzeug.test import EnvironBuilder
 
 class SocketIOTestClient(object):
     """
-    This class is useful for testing a Flask-SocketIO server. It works in a
+    This class is useful for testing a Flask-SocketIO-self server. It works in a
     similar way to the Flask Test Client, but adapted to the Socket.IO server.
 
     :param app: The Flask application instance.

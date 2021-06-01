@@ -9,7 +9,7 @@ except ImportError:
     gevent_socketio_found = False
 if gevent_socketio_found:
     print('The gevent-socketio package is incompatible with this version of '
-          'the Flask-SocketIO extension. Please uninstall it, and then '
+          'the Flask-SocketIO-self extension. Please uninstall it, and then '
           'install the latest version of python-socketio in its place.')
     sys.exit(1)
 
@@ -45,13 +45,13 @@ class _SocketIOMiddleware(socketio.Middleware):
 
 class _ManagedSession(dict, SessionMixin):
     """This class is used for user sessions that are managed by
-    Flask-SocketIO. It is simple dict, expanded with the Flask session
+    Flask-SocketIO-self. It is simple dict, expanded with the Flask session
     attributes."""
     pass
 
 
 class SocketIO(object):
-    """Create a Flask-SocketIO server.
+    """Create a Flask-SocketIO-self server.
 
     :param app: The flask application instance. If the application instance
                 isn't known at the time this class is instantiated, then call
@@ -469,20 +469,20 @@ class SocketIO(object):
             #    mw1   mw2   mw3   Flask app
             #     o ---- o ---- o ---- o
             #    /
-            #   o Flask-SocketIO
+            #   o Flask-SocketIO-self
             #    \  middleware
             #     o
-            #  Flask-SocketIO WebSocket handler
+            #  Flask-SocketIO-self WebSocket handler
             #
             # BECOMES
             #
             #  dbg-mw   mw1   mw2   mw3   Flask app
             #     o ---- o ---- o ---- o ---- o
             #    /
-            #   o Flask-SocketIO
+            #   o Flask-SocketIO-self
             #    \  middleware
             #     o
-            #  Flask-SocketIO WebSocket handler
+            #  Flask-SocketIO-self WebSocket handler
             #
             self.sockio_mw.wsgi_app = DebuggedApplication(self.sockio_mw.wsgi_app,
                                                           evalex=True)

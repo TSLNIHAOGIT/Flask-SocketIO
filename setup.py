@@ -1,5 +1,5 @@
 """
-Flask-SocketIO
+Flask-SocketIO-self
 --------------
 
 Socket.IO integration for Flask applications.
@@ -12,7 +12,7 @@ with open('flask_socketio/__init__.py', 'r') as f:
                         f.read(), re.MULTILINE).group(1)
 
 setup(
-    name='Flask-SocketIO',
+    name='Flask-SocketIO-self',
     version=version,
     url='http://github.com/miguelgrinberg/Flask-SocketIO/',
     license='MIT',
