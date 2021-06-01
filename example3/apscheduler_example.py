@@ -5,18 +5,20 @@ import time,datetime
 scheduler = BlockingScheduler(timezone="Asia/Shanghai")
 # scheduler=BackgroundScheduler(timezone="Asia/Shanghai")
 def logins():
-    print('login in ')
+    infomation='login in '
+    print(infomation)
     all_jobs=scheduler.get_jobs()
     #print()
     all_job_ids=[each.id for each in all_jobs]
+    print('all_jobs_id={}'.format(all_job_ids))
     if '2' in all_job_ids:
         scheduler.remove_job('2')
-    scheduler.add_job(func=job, id='2', trigger='interval', max_instances=5, seconds=3,next_run_time=datetime.datetime.now())
+    scheduler.add_job(func=get_data,args=[infomation], id='2', trigger='interval', max_instances=5, seconds=1,next_run_time=datetime.datetime.now())
 
 
 
-def get_data():
-    print('crawer data')
+def get_data(data):
+    print('crawer data:{}'.format(data))
     # scheduler.add_job(func=job, id='1', trigger='interval', max_instances=5, seconds=1)
 
 
@@ -33,7 +35,7 @@ if __name__=='__main__':
     # sched.start()
     # scheduler = BackgroundScheduler(timezone="Asia/Shanghai")
     # scheduler = BlockingScheduler(timezone="Asia/Shanghai")
-    scheduler.add_job(func=logins, id='1', trigger='interval', max_instances=5, seconds=60,next_run_time=datetime.datetime.now())
+    scheduler.add_job(func=logins, id='1', trigger='interval', max_instances=5, seconds=10,next_run_time=datetime.datetime.now())
 
     scheduler.start()
 
