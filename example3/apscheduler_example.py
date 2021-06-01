@@ -11,7 +11,7 @@ def logins():
     all_job_ids=[each.id for each in all_jobs]
     if '2' in all_job_ids:
         scheduler.remove_job('2')
-    scheduler.add_job(func=job, id='2', trigger='interval', max_instances=5, seconds=3)
+    scheduler.add_job(func=job, id='2', trigger='interval', max_instances=5, seconds=3,next_run_time=datetime.datetime.now())
 
 
 
